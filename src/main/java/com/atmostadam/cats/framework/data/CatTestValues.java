@@ -2,6 +2,7 @@ package com.atmostadam.cats.framework.data;
 
 import com.atmostadam.cats.api.configuration.CatWebClientProperties;
 import com.atmostadam.cats.api.entity.CatEntity;
+import com.atmostadam.cats.api.exception.CatException;
 import com.atmostadam.cats.api.exception.CatRuntimeException;
 import com.atmostadam.cats.api.model.*;
 import com.atmostadam.cats.api.model.in.CatRequest;
@@ -18,7 +19,8 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class CatTestValues {
+public final class CatTestValues {
+    private CatTestValues(){}
     private static Faker faker = Faker.instance();
     public static final String TEST_ADOPT_ID = UUID.randomUUID().toString();
     public static final String TEST_FIRST_NAME = "TEST FIRST NAME";
@@ -166,4 +168,11 @@ public class CatTestValues {
                 .setUpdatedTimestamp(Timestamp.from(Instant.now()));
     }
 
+    public static CatException catExceptionTestData() {
+        return new CatException(TEST_MESSAGE);
+    }
+
+    public static CatRuntimeException catRuntimeExceptionTestData() {
+        return new CatRuntimeException(TEST_MESSAGE);
+    }
 }

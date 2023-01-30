@@ -9,7 +9,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringJUnitConfig(CatConfigurationTest.class)
+@SpringJUnitConfig(CatTestConfiguration.class)
 public class CatWebClientPropertiesTest {
     @Autowired
     @Qualifier("CatWebClientPropertiesPetfinder")

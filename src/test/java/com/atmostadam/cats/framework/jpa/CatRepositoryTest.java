@@ -1,6 +1,6 @@
 package com.atmostadam.cats.framework.jpa;
 
-import com.atmostadam.cats.framework.configuration.CatConfigurationTest;
+import com.atmostadam.cats.framework.configuration.CatTestConfiguration;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
@@ -9,7 +9,7 @@ import static com.atmostadam.cats.framework.data.CatTestValues.catEntityTestData
 import static com.atmostadam.cats.framework.data.CatTestValues.randomCatEntityTestData;
 
 
-@SpringJUnitConfig(CatConfigurationTest.class)
+@SpringJUnitConfig(CatTestConfiguration.class)
 class CatRepositoryTest {
     @Autowired
     CatRepository repository;

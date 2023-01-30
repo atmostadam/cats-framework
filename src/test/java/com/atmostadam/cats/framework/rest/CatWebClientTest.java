@@ -1,11 +1,11 @@
 package com.atmostadam.cats.framework.rest;
 
-import com.atmostadam.cats.framework.configuration.CatConfigurationTest;
+import com.atmostadam.cats.framework.configuration.CatTestConfiguration;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-@SpringJUnitConfig(CatConfigurationTest.class)
+@SpringJUnitConfig(CatTestConfiguration.class)
 public class CatWebClientTest {
     @Autowired
     CatWebClient service;

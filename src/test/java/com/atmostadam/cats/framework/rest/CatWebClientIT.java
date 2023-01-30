@@ -1,7 +1,7 @@
 package com.atmostadam.cats.framework.rest;
 
 import com.atmostadam.cats.api.model.out.CatResponse;
-import com.atmostadam.cats.framework.configuration.CatConfigurationTest;
+import com.atmostadam.cats.framework.configuration.CatTestConfiguration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockserver.integration.ClientAndServer.startClientAndServer;
 import static org.mockserver.model.HttpRequest.request;
 
-@SpringJUnitConfig(CatConfigurationTest.class)
+@SpringJUnitConfig(CatTestConfiguration.class)
 class CatWebClientIT {
     ObjectMapper om = new ObjectMapper();
     private static ClientAndServer mockServer;

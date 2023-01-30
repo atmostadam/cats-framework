@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Import;
 @ComponentScan("com.atmostadam.cats")
 @EntityScan("com.atmostadam.cats")
 @TestConfiguration
-public class CatConfigurationTest {
+public class CatTestConfiguration {
     @Bean("CatWebClientPropertiesPetfinder")
     @ConfigurationProperties(prefix = "cats.service.http.webclient.petfinder")
     public CatWebClientProperties catWebClientPropertiesPetfinder() {
