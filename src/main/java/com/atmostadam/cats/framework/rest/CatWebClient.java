@@ -35,7 +35,7 @@ public class CatWebClient {
 
     public ResponseEntity<CatResponse> invoke(@NonNull CatWebClientProperties properties,
                                               @NonNull String requestId,
-                                              @NonNull CatRequest request) {
+                                              @NonNull Object request) {
         String requestStr;
         try {
             requestStr = om.writeValueAsString(request);
@@ -43,7 +43,6 @@ public class CatWebClient {
             return new CatResponse()
                     .setMessage("Unable to parse request to convert to String with message [" + e.getMessage() + "]")
                     .setStackTrace(ExceptionUtils.getStackTrace(e))
-                    .addCats(request.getCats())
                     .newResponseEntity(requestId, HttpStatus.BAD_REQUEST);
         }
 
@@ -51,7 +50,6 @@ public class CatWebClient {
             return new CatResponse()
                     .setMessage("No such bean CatWebClientProperties. This bean is required to source url, username, timeouts, etc.")
                     .setStackTrace(ExceptionUtils.getStackTrace(new NoSuchBeanDefinitionException("CatWebClientProperties")))
-                    .addCats(request.getCats())
                     .newResponseEntity(requestId, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
@@ -77,14 +75,18 @@ public class CatWebClient {
 
         RequestHeadersSpec<?> headersSpec = bodySpec.bodyValue(requestStr);
 
-        ResponseEntity<CatResponse> response = headersSpec.header(
+        ResponseEntity<CatResponse> response = exchange(headersSpec, requestId);
+
+        return response;
+    }
+
+    public ResponseEntity<CatResponse> exchange(RequestHeadersSpec<?> headersSpec, String requestId) {
+        return headersSpec.header(
                         HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .header("requestId", requestId)
                 .acceptCharset(StandardCharsets.UTF_8)
                 .retrieve()
                 .toEntity(CatResponse.class)
                 .block();
-
-        return response;
     }
 }
