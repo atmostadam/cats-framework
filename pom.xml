@@ -17,7 +17,7 @@
 	</parent>
 
 	<properties>
-		<revision>0.0.42</revision>
+		<revision>0.0.43</revision>
 		<java.version>17</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jacoco.version>0.8.8</jacoco.version>
