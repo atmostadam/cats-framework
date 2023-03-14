@@ -1,10 +1,6 @@
 package com.atmostadam.cats.framework.service;
 
 import com.atmostadam.cats.api.entity.CatEntity;
-import com.atmostadam.cats.api.exception.CatException;
-import com.atmostadam.cats.api.exception.CatRuntimeException;
-import com.atmostadam.cats.api.model.Cat;
-import com.atmostadam.cats.api.model.in.CatRequest;
 import com.atmostadam.cats.api.model.out.CatResponse;
 import com.atmostadam.cats.framework.jpa.CatRepository;
 import org.hamcrest.Matchers;
@@ -18,10 +14,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
-import java.util.UUID;
 
 import static com.atmostadam.cats.framework.data.CatTestValues.*;
-import static com.atmostadam.cats.framework.data.CatTestValues.catRequestTestData;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.isA;

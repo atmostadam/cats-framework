@@ -7,7 +7,6 @@ import com.atmostadam.cats.api.exception.CatRuntimeException;
 import com.atmostadam.cats.api.model.*;
 import com.atmostadam.cats.api.model.in.CatRequest;
 import com.atmostadam.cats.api.model.out.CatResponse;
-import com.github.javafaker.Faker;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +20,6 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public final class CatTestValues {
     private CatTestValues(){}
-    private static Faker faker = Faker.instance();
     public static final String TEST_ADOPT_ID = UUID.randomUUID().toString();
     public static final String TEST_FIRST_NAME = "TEST FIRST NAME";
     public static final String TEST_LAST_NAME = "TEST LAST NAME";
@@ -156,12 +154,12 @@ public final class CatTestValues {
     public static CatEntity randomCatEntityTestData() {
         return new CatEntity()
                 .setMicrochipNumber(getNextMicrochipAtomic())
-                .setName(faker.name().firstName())
-                .setBreed(faker.cat().breed())
-                .setType(faker.demographic().demonym())
-                .setPrimaryColor(faker.color().name())
-                .setSex(faker.demographic().sex())
-                .setAge(faker.number().numberBetween(0, 30))
+                .setName("Catty McCat Face")
+                .setBreed("Persian")
+                .setType("PUrebred")
+                .setPrimaryColor("Gray")
+                .setSex("M")
+                .setAge(4)
                 .setNeutered(new SecureRandom().nextBoolean())
                 .setDeceased(new SecureRandom().nextBoolean())
                 .setCreatedTimestamp(Timestamp.from(Instant.now()))
