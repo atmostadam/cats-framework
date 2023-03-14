@@ -10,12 +10,14 @@ Right now, there is a gap that exists where Therapy Cats are only being offered 
 Dogs have traditionally held critical roles in society such as service dogs, policy dogs, rescue dogs and therapy dogs. However, there has been substantial research that owning other therapy animals can be effective as well. Although there is currently no standardized certification the way that there is for "Service Dogs" or "Police Dogs", therapy animal are recognized as a critical form of treatment and are often permitted in apartments, airlines, grocery stories and even some workplaces where they would otherwise be prohibited. Although hard to quantify the shortage of Therapy Cats, research shows that resolving this issue will improve the quality of people's lives.
 
 ## Repository
-Cat Framework library for shared components between workflow engines.
+The cats-api project specifically creates the interface agreements between components and the specifications that need to be implemented in order any new application technology to be showcased. This includes standard definitions of what the Cat Charity App must do including:
 - RESTful APIs
 - Database Entity Definitions
 - Data Models
-- Rules Capabilities
-- Orchestration Capabilities
+- Rules Engine
+- Orchestration
+- Workflow Engine
+- Thread Pool
 - Java
 - Spring Boot
 - RESTful Services
@@ -28,6 +30,8 @@ I understand that not everything in this repository meets Martin Fowler or other
 * <https://github.com/atmostadam/cats-api>
 * <https://github.com/atmostadam/cats-framework>
 * <https://github.com/atmostadam/cats-spring-boot>
+* <https://github.com/atmostadam/cats-drools>
+* <https://github.com/atmostadam/cats-jbpm>
 
 ## Contact Information:
 I try to spend at least a few hours a week trying to keep up my technical skillset via prototyping.
